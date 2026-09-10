@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { COMPANY, RETRO_RUMBLE_URL } from '../data/content'
 
 export default function Footer() {
@@ -8,12 +9,12 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6 py-12">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div className="sm:col-span-2 lg:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
+            <Link to="/" className="flex items-center gap-2 mb-4 hover:opacity-80 transition-opacity">
               <div className="w-8 h-8 rounded-md bg-accent/10 border border-accent/20 flex items-center justify-center">
                 <span className="text-accent font-bold text-sm">S</span>
               </div>
               <span className="text-text-primary font-semibold text-lg">{COMPANY.name}</span>
-            </div>
+            </Link>
             <p className="text-text-secondary text-sm leading-relaxed max-w-md">
               {COMPANY.description}
             </p>
@@ -23,19 +24,20 @@ export default function Footer() {
             <h3 className="text-text-primary font-semibold text-sm mb-4">Navegação</h3>
             <ul className="space-y-2">
               {[
-                { label: 'Empresa', href: '#empresa' },
-                { label: 'Tecnologia', href: '#tecnologia' },
-                { label: 'TechGames', href: '#techgames' },
-                { label: 'Retro Rumble', href: '#retro-rumble' },
-                { label: 'Visão', href: '#visao' },
+                { label: 'Home', path: '/' },
+                { label: 'Empresa', path: '/empresa' },
+                { label: 'Tecnologia', path: '/tecnologia' },
+                { label: 'TechGames', path: '/techgames' },
+                { label: 'Retro Rumble', path: '/retro-rumble' },
+                { label: 'Visão', path: '/visao' },
               ].map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
+                <li key={link.path}>
+                  <Link
+                    to={link.path}
                     className="text-text-secondary text-sm hover:text-text-primary transition-colors duration-200"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

@@ -1,5 +1,6 @@
 import { ArrowRight, ChevronDown } from 'lucide-react'
-import { COMPANY, RETRO_RUMBLE_URL } from '../../data/content'
+import { Link } from 'react-router-dom'
+import { COMPANY } from '../../data/content'
 import AnimatedGrid from '../ui/AnimatedGrid'
 import { useReducedMotion } from '../../hooks/useAnimations'
 
@@ -50,22 +51,20 @@ export default function Hero() {
             reduced ? 'opacity-100' : 'opacity-0 animate-[fadeIn_0.8s_ease-out_0.8s_forwards]'
           }`}
         >
-          <a
-            href="#empresa"
+          <Link
+            to="/empresa"
             className="group inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent text-bg-primary font-semibold text-sm hover:bg-accent-hover transition-all duration-200 hover:shadow-[0_0_20px_var(--color-accent-glow)]"
           >
             Conheça a empresa
             <ArrowRight size={16} className="transition-transform duration-200 group-hover:translate-x-0.5" />
-          </a>
-          <a
-            href={RETRO_RUMBLE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+          </Link>
+          <Link
+            to="/retro-rumble"
             className="group inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-retro/30 bg-retro/5 text-retro font-semibold text-sm hover:bg-retro/15 hover:border-retro/50 transition-all duration-200"
           >
             Conheça o Retro Rumble
             <ArrowRight size={16} className="transition-transform duration-200 group-hover:translate-x-0.5" />
-          </a>
+          </Link>
         </div>
 
         <div
@@ -73,13 +72,13 @@ export default function Hero() {
             reduced ? 'opacity-100' : 'opacity-0 animate-[fadeIn_0.8s_ease-out_1.2s_forwards]'
           }`}
         >
-          <a
-            href="#empresa"
+          <Link
+            to="/empresa"
             className="text-text-muted hover:text-text-secondary transition-colors"
             aria-label="Rolar para baixo"
           >
             <ChevronDown size={20} className="animate-bounce" style={{ animationDuration: '2s' }} />
-          </a>
+          </Link>
         </div>
       </div>
 

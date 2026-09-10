@@ -1,5 +1,6 @@
 import { useInView } from '../../hooks/useAnimations'
 import Section from '../ui/Section'
+import { Link } from 'react-router-dom'
 import { RETRO_RUMBLE_URL } from '../../data/content'
 
 export default function TechGames() {
@@ -59,12 +60,12 @@ export default function TechGames() {
               >
                 Conhecer Retro Rumble
               </a>
-              <a
-                href="#retro-rumble"
+              <Link
+                to="/retro-rumble"
                 className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg border border-border text-text-secondary font-medium text-sm hover:bg-bg-card hover:text-text-primary transition-all duration-200"
               >
                 Saiba mais
-              </a>
+              </Link>
             </div>
           </div>
         </div>

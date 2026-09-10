@@ -1,5 +1,6 @@
 import { useInView } from '../../hooks/useAnimations'
 import Section from '../ui/Section'
+import { Link } from 'react-router-dom'
 import { RETRO_RUMBLE_URL } from '../../data/content'
 import { ExternalLink, ArrowRight } from 'lucide-react'
 
@@ -64,13 +65,13 @@ export default function RetroRumble() {
                     Jogar Retro Rumble
                     <ExternalLink size={16} className="opacity-70 group-hover:opacity-100 transition-opacity" />
                   </a>
-                  <a
-                    href="#techgames"
+                  <Link
+                    to="/techgames"
                     className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border border-border text-text-secondary font-medium text-sm hover:bg-bg-card hover:text-text-primary transition-all duration-200"
                   >
                     Conhecer a TechGames
                     <ArrowRight size={16} className="transition-transform duration-200 group-hover:translate-x-0.5" />
-                  </a>
+                  </Link>
                 </div>
               </div>
 

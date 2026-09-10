@@ -5,11 +5,12 @@ export const COMPANY = {
 } as const
 
 export const NAV_LINKS = [
-  { label: 'Empresa', href: '#empresa' },
-  { label: 'Tecnologia', href: '#tecnologia' },
-  { label: 'TechGames', href: '#techgames' },
-  { label: 'Retro Rumble', href: '#retro-rumble' },
-  { label: 'Visão', href: '#visao' },
+  { label: 'Home', path: '/' },
+  { label: 'Empresa', path: '/empresa' },
+  { label: 'Tecnologia', path: '/tecnologia' },
+  { label: 'TechGames', path: '/techgames' },
+  { label: 'Retro Rumble', path: '/retro-rumble' },
+  { label: 'Visão', path: '/visao' },
 ] as const
 
 export const RETRO_RUMBLE_URL = 'https://pixelfury.vercel.app/'
