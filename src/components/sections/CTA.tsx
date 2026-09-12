@@ -1,11 +1,18 @@
 import { useInView } from '../../hooks/useAnimations'
 import Section from '../ui/Section'
-import { Link } from 'react-router-dom'
 import { RETRO_RUMBLE_URL } from '../../data/content'
 import { ArrowRight } from 'lucide-react'
 
 export default function CTA() {
   const { ref, isInView } = useInView(0.1)
+
+  const scrollTo = (href: string) => {
+    const id = href.replace('#', '')
+    const el = document.getElementById(id)
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
 
   return (
     <Section className="py-24 sm:py-32">
@@ -30,13 +37,14 @@ export default function CTA() {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link
-                to="/tecnologia"
+              <a
+                href="#tecnologia"
+                onClick={(e) => { e.preventDefault(); scrollTo('#tecnologia') }}
                 className="group inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent text-bg-primary font-semibold text-sm hover:bg-accent-hover transition-all duration-200 hover:shadow-[0_0_20px_var(--color-accent-glow)]"
               >
                 Conheça nossa tecnologia
                 <ArrowRight size={16} className="transition-transform duration-200 group-hover:translate-x-0.5" />
-              </Link>
+              </a>
               <a
                 href={RETRO_RUMBLE_URL}
                 target="_blank"

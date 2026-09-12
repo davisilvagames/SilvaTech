@@ -1,5 +1,4 @@
 import { ArrowRight, ChevronDown } from 'lucide-react'
-import { Link } from 'react-router-dom'
 import { COMPANY } from '../../data/content'
 import AnimatedGrid from '../ui/AnimatedGrid'
 import { useReducedMotion } from '../../hooks/useAnimations'
@@ -7,9 +6,17 @@ import { useReducedMotion } from '../../hooks/useAnimations'
 export default function Hero() {
   const reduced = useReducedMotion()
 
+  const scrollTo = (href: string) => {
+    const id = href.replace('#', '')
+    const el = document.getElementById(id)
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   return (
     <section
-      id="inicio"
+      id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       <AnimatedGrid />
@@ -51,20 +58,22 @@ export default function Hero() {
             reduced ? 'opacity-100' : 'opacity-0 animate-[fadeIn_0.8s_ease-out_0.8s_forwards]'
           }`}
         >
-          <Link
-            to="/empresa"
+          <a
+            href="#empresa"
+            onClick={(e) => { e.preventDefault(); scrollTo('#empresa') }}
             className="group inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent text-bg-primary font-semibold text-sm hover:bg-accent-hover transition-all duration-200 hover:shadow-[0_0_20px_var(--color-accent-glow)]"
           >
             Conheça a empresa
             <ArrowRight size={16} className="transition-transform duration-200 group-hover:translate-x-0.5" />
-          </Link>
-          <Link
-            to="/retro-rumble"
+          </a>
+          <a
+            href="#retro-rumble"
+            onClick={(e) => { e.preventDefault(); scrollTo('#retro-rumble') }}
             className="group inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-retro/30 bg-retro/5 text-retro font-semibold text-sm hover:bg-retro/15 hover:border-retro/50 transition-all duration-200"
           >
             Conheça o Retro Rumble
             <ArrowRight size={16} className="transition-transform duration-200 group-hover:translate-x-0.5" />
-          </Link>
+          </a>
         </div>
 
         <div
@@ -72,13 +81,14 @@ export default function Hero() {
             reduced ? 'opacity-100' : 'opacity-0 animate-[fadeIn_0.8s_ease-out_1.2s_forwards]'
           }`}
         >
-          <Link
-            to="/empresa"
+          <a
+            href="#empresa"
+            onClick={(e) => { e.preventDefault(); scrollTo('#empresa') }}
             className="text-text-muted hover:text-text-secondary transition-colors"
             aria-label="Rolar para baixo"
           >
             <ChevronDown size={20} className="animate-bounce" style={{ animationDuration: '2s' }} />
-          </Link>
+          </a>
         </div>
       </div>
 

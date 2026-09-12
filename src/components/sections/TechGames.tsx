@@ -1,10 +1,17 @@
 import { useInView } from '../../hooks/useAnimations'
 import Section from '../ui/Section'
-import { Link } from 'react-router-dom'
 import { RETRO_RUMBLE_URL } from '../../data/content'
 
 export default function TechGames() {
   const { ref, isInView } = useInView(0.1)
+
+  const scrollTo = (href: string) => {
+    const id = href.replace('#', '')
+    const el = document.getElementById(id)
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
 
   return (
     <Section id="techgames" className="py-24 sm:py-32">
@@ -60,12 +67,13 @@ export default function TechGames() {
               >
                 Conhecer Retro Rumble
               </a>
-              <Link
-                to="/retro-rumble"
+              <a
+                href="#retro-rumble"
+                onClick={(e) => { e.preventDefault(); scrollTo('#retro-rumble') }}
                 className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg border border-border text-text-secondary font-medium text-sm hover:bg-bg-card hover:text-text-primary transition-all duration-200"
               >
                 Saiba mais
-              </Link>
+              </a>
             </div>
           </div>
         </div>

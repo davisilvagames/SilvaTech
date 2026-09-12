@@ -1,12 +1,23 @@
 import { Menu, X } from 'lucide-react'
-import { NavLink, Link } from 'react-router-dom'
 import { NAV_LINKS, RETRO_RUMBLE_URL, COMPANY } from '../data/content'
-import { useScrollPosition, useMobileMenu } from '../hooks/useAnimations'
+import { useScrollPosition, useMobileMenu, useActiveSection } from '../hooks/useAnimations'
+import { useCallback } from 'react'
 
 export default function Header() {
   const scrollY = useScrollPosition()
   const { isOpen, toggle, close } = useMobileMenu()
   const isScrolled = scrollY > 50
+  const sectionIds = NAV_LINKS.map((l) => l.href.replace('#', ''))
+  const activeId = useActiveSection(sectionIds)
+
+  const scrollTo = useCallback((href: string) => {
+    const id = href.replace('#', '')
+    const el = document.getElementById(id)
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' })
+    }
+    close()
+  }, [close])
 
   return (
     <header
@@ -18,8 +29,9 @@ export default function Header() {
       role="banner"
     >
       <nav className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between" aria-label="Navegação principal">
-        <Link
-          to="/"
+        <a
+          href="#home"
+          onClick={(e) => { e.preventDefault(); scrollTo('#home') }}
           className="flex items-center gap-2 text-text-primary font-semibold text-lg tracking-tight hover:opacity-80 transition-opacity"
           aria-label={`${COMPANY.name} — Página inicial`}
         >
@@ -27,34 +39,32 @@ export default function Header() {
             <span className="text-accent font-bold text-sm">S</span>
           </div>
           <span>{COMPANY.name}</span>
-        </Link>
+        </a>
 
         <div className="hidden md:flex items-center gap-8">
-          {NAV_LINKS.map((link) => (
-            <NavLink
-              key={link.path}
-              to={link.path}
-              end={link.path === '/'}
-              className={({ isActive }) =>
-                `text-sm transition-colors duration-200 relative group ${
+          {NAV_LINKS.map((link) => {
+            const id = link.href.replace('#', '')
+            const isActive = activeId === id
+            return (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={(e) => { e.preventDefault(); scrollTo(link.href) }}
+                className={`text-sm transition-colors duration-200 relative group ${
                   isActive
                     ? 'text-text-primary font-medium'
                     : 'text-text-secondary hover:text-text-primary'
-                }`
-              }
-            >
-              {({ isActive }) => (
-                <>
-                  {link.label}
-                  <span
-                    className={`absolute -bottom-1 left-0 h-px bg-accent transition-all duration-300 ${
-                      isActive ? 'w-full' : 'w-0 group-hover:w-full'
-                    }`}
-                  />
-                </>
-              )}
-            </NavLink>
-          ))}
+                }`}
+              >
+                {link.label}
+                <span
+                  className={`absolute -bottom-1 left-0 h-px bg-accent transition-all duration-300 ${
+                    isActive ? 'w-full' : 'w-0 group-hover:w-full'
+                  }`}
+                />
+              </a>
+            )
+          })}
           <a
             href={RETRO_RUMBLE_URL}
             target="_blank"
@@ -81,23 +91,24 @@ export default function Header() {
         }`}
       >
         <div className="flex flex-col p-6 gap-2">
-          {NAV_LINKS.map((link) => (
-            <NavLink
-              key={link.path}
-              to={link.path}
-              end={link.path === '/'}
-              onClick={close}
-              className={({ isActive }) =>
-                `text-lg py-3 px-4 rounded-lg transition-all duration-200 ${
+          {NAV_LINKS.map((link) => {
+            const id = link.href.replace('#', '')
+            const isActive = activeId === id
+            return (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={(e) => { e.preventDefault(); scrollTo(link.href) }}
+                className={`text-lg py-3 px-4 rounded-lg transition-all duration-200 ${
                   isActive
                     ? 'text-text-primary bg-bg-card font-medium'
                     : 'text-text-secondary hover:bg-bg-card hover:text-text-primary'
-                }`
-              }
-            >
-              {link.label}
-            </NavLink>
-          ))}
+                }`}
+              >
+                {link.label}
+              </a>
+            )
+          })}
           <a
             href={RETRO_RUMBLE_URL}
             target="_blank"

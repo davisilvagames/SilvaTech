@@ -1,11 +1,18 @@
 import { useInView } from '../../hooks/useAnimations'
 import Section from '../ui/Section'
-import { Link } from 'react-router-dom'
 import { RETRO_RUMBLE_URL } from '../../data/content'
 import { ExternalLink, ArrowRight } from 'lucide-react'
 
 export default function RetroRumble() {
   const { ref, isInView } = useInView(0.1)
+
+  const scrollTo = (href: string) => {
+    const id = href.replace('#', '')
+    const el = document.getElementById(id)
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
 
   return (
     <Section id="retro-rumble" className="py-24 sm:py-32">
@@ -13,7 +20,6 @@ export default function RetroRumble() {
         <div ref={ref} className={`relative rounded-2xl border border-retro/20 bg-retro/[0.02] overflow-hidden transition-all duration-700 ${
           isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
-          {/* Retro grid background */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
             <div
               className="absolute inset-0 opacity-[0.03]"
@@ -65,13 +71,14 @@ export default function RetroRumble() {
                     Jogar Retro Rumble
                     <ExternalLink size={16} className="opacity-70 group-hover:opacity-100 transition-opacity" />
                   </a>
-                  <Link
-                    to="/techgames"
+                  <a
+                    href="#techgames"
+                    onClick={(e) => { e.preventDefault(); scrollTo('#techgames') }}
                     className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border border-border text-text-secondary font-medium text-sm hover:bg-bg-card hover:text-text-primary transition-all duration-200"
                   >
                     Conhecer a TechGames
                     <ArrowRight size={16} className="transition-transform duration-200 group-hover:translate-x-0.5" />
-                  </Link>
+                  </a>
                 </div>
               </div>
 
@@ -81,7 +88,6 @@ export default function RetroRumble() {
                     <RetroGameVisual />
                   </div>
 
-                  {/* Scanlines overlay */}
                   <div
                     className="absolute inset-0 pointer-events-none opacity-[0.03]"
                     aria-hidden="true"
@@ -103,7 +109,6 @@ function RetroGameVisual() {
   return (
     <div className="relative w-full h-full flex items-center justify-center p-8">
       <div className="relative">
-        {/* Pixel grid art */}
         <div className="grid grid-cols-8 gap-1">
           {Array.from({ length: 64 }).map((_, i) => {
             const isActive = [10, 11, 12, 13, 18, 21, 26, 27, 28, 29, 30, 34, 35, 37, 38, 41, 42, 43, 44, 45, 50, 51, 52, 53].includes(i)
@@ -124,7 +129,6 @@ function RetroGameVisual() {
           })}
         </div>
 
-        {/* HUD elements */}
         <div className="absolute -top-6 left-0 right-0 flex justify-between items-center px-1">
           <span className="text-retro/60 text-[10px] font-mono tracking-wider">PLAYER 1</span>
           <span className="text-retro/60 text-[10px] font-mono tracking-wider">SCORE: 0000</span>
