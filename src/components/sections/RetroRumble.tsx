@@ -15,7 +15,7 @@ export default function RetroRumble() {
   }
 
   return (
-    <Section id="retro-rumble" className="py-[100px] sm:py-[140px]">
+    <Section id="retro-rumble" className="py-[120px] sm:py-[180px]">
       <div className="max-w-[1200px] mx-auto px-6">
         <div ref={ref} className={`relative rounded-2xl border border-retro/20 bg-retro/[0.02] overflow-hidden transition-all duration-700 ${
           isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
@@ -34,10 +34,10 @@ export default function RetroRumble() {
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-retro/5 rounded-full blur-[100px]" />
           </div>
 
-          <div className="relative p-8 sm:p-12 lg:p-16">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="relative p-10 sm:p-14 lg:p-20">
+            <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
               <div>
-                <div className="flex items-center gap-4 mb-8">
+                <div className="flex items-center gap-4 mb-10">
                   <div className="w-12 h-12 rounded-lg bg-retro/10 border border-retro/20 flex items-center justify-center">
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" className="text-retro">
                       <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="2" />
@@ -53,11 +53,11 @@ export default function RetroRumble() {
                   </div>
                 </div>
 
-                <p className="text-text-secondary text-lg leading-relaxed mb-6">
+                <p className="text-text-secondary text-lg leading-relaxed mb-8">
                   Uma experiência que mistura nostalgia, competição e tecnologia. Retro Rumble é um dos primeiros jogos desenvolvidos pela TechGames, combinando estética retrô com mecânicas modernas.
                 </p>
 
-                <p className="text-text-muted text-sm leading-relaxed mb-10">
+                <p className="text-text-muted text-sm leading-relaxed mb-12">
                   O jogo está disponível para jogar diretamente no navegador — sem necessidade de downloads ou instalações.
                 </p>
 

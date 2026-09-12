@@ -21,9 +21,9 @@ export default function Hero() {
     >
       <AnimatedGrid />
 
-      <div className="relative z-10 max-w-[800px] mx-auto px-6 text-center py-20">
+      <div className="relative z-10 max-w-[800px] mx-auto px-6 text-center py-24 sm:py-32">
         <div
-          className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-border-light bg-bg-card/50 backdrop-blur-sm mb-10 transition-all duration-500 ${
+          className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-border-light bg-bg-card/50 backdrop-blur-sm mb-12 transition-all duration-500 ${
             reduced ? 'opacity-100' : 'opacity-0 animate-[fadeIn_0.6s_ease-out_0.2s_forwards]'
           }`}
         >
@@ -34,7 +34,7 @@ export default function Hero() {
         </div>
 
         <h1
-          className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.08] tracking-tight mb-8 transition-all duration-700 ${
+          className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.08] tracking-tight mb-10 transition-all duration-700 ${
             reduced ? 'opacity-100' : 'opacity-0 animate-[fadeIn_0.8s_ease-out_0.4s_forwards]'
           }`}
         >
@@ -46,7 +46,7 @@ export default function Hero() {
         </h1>
 
         <p
-          className={`text-text-secondary text-base sm:text-lg max-w-[700px] mx-auto mb-12 leading-relaxed transition-all duration-700 ${
+          className={`text-text-secondary text-base sm:text-lg max-w-[700px] mx-auto mb-14 leading-relaxed transition-all duration-700 ${
             reduced ? 'opacity-100' : 'opacity-0 animate-[fadeIn_0.8s_ease-out_0.6s_forwards]'
           }`}
         >

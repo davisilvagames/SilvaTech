@@ -6,13 +6,13 @@ export default function Ecosystem() {
   const { ref, isInView } = useInView(0.1)
 
   return (
-    <Section id="ecossistema" className="py-[100px] sm:py-[140px]">
+    <Section id="ecossistema" className="py-[120px] sm:py-[180px]">
       <div className="max-w-[800px] mx-auto px-6">
-        <div className="text-center mb-16 sm:mb-20">
-          <span className="text-accent text-xs font-semibold tracking-widest uppercase mb-5 block">
+        <div className="text-center mb-20 sm:mb-24">
+          <span className="text-accent text-xs font-semibold tracking-widest uppercase mb-6 block">
             Ecossistema
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-text-primary mb-6">
+          <h2 className="text-3xl sm:text-4xl font-bold text-text-primary mb-8">
             Uma estrutura pensada para crescer.
           </h2>
           <p className="text-text-secondary max-w-xl mx-auto text-base sm:text-lg leading-relaxed">
@@ -31,9 +31,9 @@ export default function Ecosystem() {
           />
 
           <div className={`flex flex-col items-center transition-all duration-500 ${isInView ? 'opacity-100' : 'opacity-0'}`} style={{ transitionDelay: '200ms' }}>
-            <ChevronDown size={24} className="text-text-muted my-3" />
-            <div className="w-px h-5 bg-border" />
-            <ChevronDown size={24} className="text-text-muted my-3" />
+            <ChevronDown size={24} className="text-text-muted my-4" />
+            <div className="w-px h-6 bg-border" />
+            <ChevronDown size={24} className="text-text-muted my-4" />
           </div>
 
           <EcosystemNode
@@ -46,9 +46,9 @@ export default function Ecosystem() {
           />
 
           <div className={`flex flex-col items-center transition-all duration-500 ${isInView ? 'opacity-100' : 'opacity-0'}`} style={{ transitionDelay: '600ms' }}>
-            <ChevronDown size={24} className="text-text-muted my-3" />
-            <div className="w-px h-5 bg-border" />
-            <ChevronDown size={24} className="text-text-muted my-3" />
+            <ChevronDown size={24} className="text-text-muted my-4" />
+            <div className="w-px h-6 bg-border" />
+            <ChevronDown size={24} className="text-text-muted my-4" />
           </div>
 
           <EcosystemNode
@@ -108,12 +108,12 @@ function EcosystemNode({
 
   return (
     <div
-      className={`w-full max-w-md rounded-xl border ${c.border} ${c.bg} p-7 backdrop-blur-sm transition-all duration-600 ${
+      className={`w-full max-w-md rounded-xl border ${c.border} ${c.bg} p-8 backdrop-blur-sm transition-all duration-600 ${
         isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
       } hover:${c.glow}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
-      <div className="flex items-center gap-3 mb-4">
+      <div className="flex items-center gap-4 mb-5">
         <div className={`w-3 h-3 rounded-full ${c.dot}`} />
         <div>
           <h3 className="text-text-primary font-semibold text-lg">{title}</h3>

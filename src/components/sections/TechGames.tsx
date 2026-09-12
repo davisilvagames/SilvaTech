@@ -14,7 +14,7 @@ export default function TechGames() {
   }
 
   return (
-    <Section id="techgames" className="py-[100px] sm:py-[140px]">
+    <Section id="techgames" className="py-[120px] sm:py-[180px]">
       <div className="max-w-[1200px] mx-auto px-6">
         <div ref={ref} className={`relative rounded-2xl border border-secondary/20 bg-secondary/[0.03] overflow-hidden transition-all duration-700 ${
           isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
@@ -22,8 +22,8 @@ export default function TechGames() {
           <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/5 rounded-full blur-[80px]" />
           <div className="absolute bottom-0 left-0 w-48 h-48 bg-retro/5 rounded-full blur-[60px]" />
 
-          <div className="relative p-8 sm:p-12 lg:p-16">
-            <div className="flex items-center gap-4 mb-8">
+          <div className="relative p-10 sm:p-14 lg:p-20">
+            <div className="flex items-center gap-4 mb-10">
               <div className="w-12 h-12 rounded-lg bg-secondary/10 border border-secondary/20 flex items-center justify-center">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-secondary">
                   <rect x="2" y="6" width="20" height="12" rx="2" />
@@ -37,11 +37,11 @@ export default function TechGames() {
               </div>
             </div>
 
-            <p className="text-text-secondary text-lg max-w-2xl mb-10 leading-relaxed">
+            <p className="text-text-secondary text-lg max-w-2xl mb-12 leading-relaxed">
               Games desenvolvidos com tecnologia, criatividade e identidade. A TechGames é a divisão dedicada ao desenvolvimento de jogos e experiências interativas que conectam pessoas através do entretenimento digital.
             </p>
 
-            <div className="grid sm:grid-cols-3 gap-6 mb-10">
+            <div className="grid sm:grid-cols-3 gap-6 sm:gap-8 mb-12">
               {[
                 { label: 'Games', desc: 'Jogos com identidade própria' },
                 { label: 'Experiências interativas', desc: 'Interfaces que engajam' },
@@ -49,7 +49,7 @@ export default function TechGames() {
               ].map((item, i) => (
                 <div
                   key={item.label}
-                  className="rounded-lg border border-border bg-bg-card/50 p-5 hover:border-secondary/30 transition-all duration-300"
+                  className="rounded-lg border border-border bg-bg-card/50 p-6 hover:border-secondary/30 transition-all duration-300"
                   style={{ transitionDelay: `${i * 100}ms` }}
                 >
                   <h3 className="text-text-primary font-medium text-sm mb-1.5">{item.label}</h3>

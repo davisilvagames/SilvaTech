@@ -15,7 +15,7 @@ export default function CTA() {
   }
 
   return (
-    <Section className="py-[100px] sm:py-[140px]">
+    <Section className="py-[120px] sm:py-[180px]">
       <div className="max-w-[800px] mx-auto px-6">
         <div
           ref={ref}
@@ -28,11 +28,11 @@ export default function CTA() {
             <div className="absolute bottom-0 right-1/4 w-48 h-48 bg-secondary/5 rounded-full blur-[60px]" />
           </div>
 
-          <div className="relative p-8 sm:p-12 lg:p-16 text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-text-primary mb-6">
+          <div className="relative p-10 sm:p-14 lg:p-20 text-center">
+            <h2 className="text-3xl sm:text-4xl font-bold text-text-primary mb-8">
               Da ideia ao produto.
             </h2>
-            <p className="text-text-secondary text-lg max-w-xl mx-auto mb-10 leading-relaxed">
+            <p className="text-text-secondary text-lg max-w-xl mx-auto mb-12 leading-relaxed">
               Tecnologia desenvolvida com intenção. Soluções que evoluem, produtos que importam e experiências que conectam.
             </p>
 
