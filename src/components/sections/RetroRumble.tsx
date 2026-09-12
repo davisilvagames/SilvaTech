@@ -15,8 +15,8 @@ export default function RetroRumble() {
   }
 
   return (
-    <Section id="retro-rumble" className="py-24 sm:py-32">
-      <div className="max-w-6xl mx-auto px-6">
+    <Section id="retro-rumble" className="py-[100px] sm:py-[140px]">
+      <div className="max-w-[1200px] mx-auto px-6">
         <div ref={ref} className={`relative rounded-2xl border border-retro/20 bg-retro/[0.02] overflow-hidden transition-all duration-700 ${
           isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
@@ -34,12 +34,12 @@ export default function RetroRumble() {
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-retro/5 rounded-full blur-[100px]" />
           </div>
 
-          <div className="relative p-8 sm:p-12">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="relative p-8 sm:p-12 lg:p-16">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               <div>
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-lg bg-retro/10 border border-retro/20 flex items-center justify-center">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-retro">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-12 h-12 rounded-lg bg-retro/10 border border-retro/20 flex items-center justify-center">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" className="text-retro">
                       <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="2" />
                       <rect x="7" y="7" width="4" height="4" fill="currentColor" />
                       <rect x="13" y="7" width="4" height="4" fill="currentColor" />
@@ -57,16 +57,16 @@ export default function RetroRumble() {
                   Uma experiência que mistura nostalgia, competição e tecnologia. Retro Rumble é um dos primeiros jogos desenvolvidos pela TechGames, combinando estética retrô com mecânicas modernas.
                 </p>
 
-                <p className="text-text-muted text-sm leading-relaxed mb-8">
+                <p className="text-text-muted text-sm leading-relaxed mb-10">
                   O jogo está disponível para jogar diretamente no navegador — sem necessidade de downloads ou instalações.
                 </p>
 
-                <div className="flex flex-col sm:flex-row gap-3">
+                <div className="flex flex-col sm:flex-row gap-4">
                   <a
                     href={RETRO_RUMBLE_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-retro text-white font-semibold text-sm hover:bg-retro/90 transition-all duration-200 hover:shadow-[0_0_24px_var(--color-retro-glow)]"
+                    className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg bg-retro text-white font-semibold text-sm hover:bg-retro/90 transition-all duration-200 hover:shadow-[0_0_24px_var(--color-retro-glow)]"
                   >
                     Jogar Retro Rumble
                     <ExternalLink size={16} className="opacity-70 group-hover:opacity-100 transition-opacity" />
@@ -74,7 +74,7 @@ export default function RetroRumble() {
                   <a
                     href="#techgames"
                     onClick={(e) => { e.preventDefault(); scrollTo('#techgames') }}
-                    className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border border-border text-text-secondary font-medium text-sm hover:bg-bg-card hover:text-text-primary transition-all duration-200"
+                    className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg border border-border text-text-secondary font-medium text-sm hover:bg-bg-card hover:text-text-primary transition-all duration-200"
                   >
                     Conhecer a TechGames
                     <ArrowRight size={16} className="transition-transform duration-200 group-hover:translate-x-0.5" />

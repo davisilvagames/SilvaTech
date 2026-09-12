@@ -15,27 +15,27 @@ const projects = [
 
 export default function Projects() {
   return (
-    <Section id="projetos" className="py-24 sm:py-32">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <span className="text-accent text-xs font-semibold tracking-widest uppercase mb-4 block">
+    <Section id="projetos" className="py-[100px] sm:py-[140px]">
+      <div className="max-w-[1200px] mx-auto px-6">
+        <div className="text-center mb-16 sm:mb-20">
+          <span className="text-accent text-xs font-semibold tracking-widest uppercase mb-5 block">
             Projetos
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-text-primary mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-text-primary mb-6">
             Produtos em desenvolvimento.
           </h2>
-          <p className="text-text-secondary max-w-xl mx-auto">
+          <p className="text-text-secondary max-w-xl mx-auto text-base sm:text-lg leading-relaxed">
             Nossos projetos refletem nossa visão de construir tecnologia com propósito. Novos produtos serão adicionados aqui conforme evoluímos.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {projects.map((project, i) => (
             <ProjectCard key={project.name} project={project} index={i} />
           ))}
 
-          <div className="rounded-xl border border-dashed border-border bg-bg-card/30 p-6 flex flex-col items-center justify-center text-center min-h-[200px]">
-            <div className="w-10 h-10 rounded-full bg-bg-card border border-border flex items-center justify-center mb-3">
+          <div className="rounded-xl border border-dashed border-border bg-bg-card/30 p-8 flex flex-col items-center justify-center text-center min-h-[220px]">
+            <div className="w-12 h-12 rounded-full bg-bg-card border border-border flex items-center justify-center mb-4">
               <span className="text-text-muted text-lg">+</span>
             </div>
             <p className="text-text-muted text-sm">Novos projetos em breve</p>
@@ -65,21 +65,21 @@ function ProjectCard({ project, index }: { project: typeof projects[number]; ind
       href={project.url}
       target="_blank"
       rel="noopener noreferrer"
-      className={`group block rounded-xl border ${c.border} bg-bg-card p-6 transition-all duration-500 hover:-translate-y-0.5 ${c.glow} ${
+      className={`group block rounded-xl border ${c.border} bg-bg-card p-7 transition-all duration-500 hover:-translate-y-0.5 ${c.glow} ${
         isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
       }`}
       style={{ transitionDelay: `${index * 100}ms` }}
     >
-      <div className="flex items-center justify-between mb-4">
-        <span className={`text-xs px-2.5 py-1 rounded-full border ${c.badge} font-medium`}>
+      <div className="flex items-center justify-between mb-5">
+        <span className={`text-xs px-3 py-1.5 rounded-full border ${c.badge} font-medium`}>
           {project.status}
         </span>
         <ExternalLink size={14} className="text-text-muted group-hover:text-text-secondary transition-colors" />
       </div>
-      <h3 className="text-text-primary font-semibold text-lg mb-2 group-hover:text-text-primary transition-colors">
+      <h3 className="text-text-primary font-semibold text-lg mb-3 group-hover:text-text-primary transition-colors">
         {project.name}
       </h3>
-      <p className="text-text-secondary text-sm leading-relaxed">
+      <p className="text-text-secondary text-sm sm:text-base leading-relaxed">
         {project.description}
       </p>
     </a>

@@ -12,21 +12,21 @@ const iconMap = {
 
 export default function Technology() {
   return (
-    <Section id="tecnologia" className="py-24 sm:py-32">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <span className="text-accent text-xs font-semibold tracking-widest uppercase mb-4 block">
+    <Section id="tecnologia" className="py-[100px] sm:py-[140px]">
+      <div className="max-w-[1200px] mx-auto px-6">
+        <div className="text-center mb-16 sm:mb-20">
+          <span className="text-accent text-xs font-semibold tracking-widest uppercase mb-5 block">
             Áreas de atuação
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-text-primary mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-text-primary mb-6">
             Tecnologia que gera impacto.
           </h2>
-          <p className="text-text-secondary max-w-2xl mx-auto">
+          <p className="text-text-secondary max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
             Atuamos em diferentes frentes da tecnologia, sempre com foco em construir produtos e experiências que importam.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 gap-4">
+        <div className="grid sm:grid-cols-2 gap-6 sm:gap-8">
           {AREAS.map((area, i) => (
             <AreaCard key={area.title} area={area} index={i} />
           ))}
@@ -43,16 +43,16 @@ function AreaCard({ area, index }: { area: typeof AREAS[number]; index: number }
   return (
     <div
       ref={ref}
-      className={`group relative rounded-xl border border-border bg-bg-card p-6 hover:bg-bg-card-hover hover:border-border-light transition-all duration-300 hover:-translate-y-0.5 cursor-default ${
+      className={`group relative rounded-xl border border-border bg-bg-card p-7 sm:p-8 hover:bg-bg-card-hover hover:border-border-light transition-all duration-300 hover:-translate-y-0.5 cursor-default ${
         isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
       }`}
       style={{ transitionDelay: `${index * 80}ms` }}
     >
-      <div className="w-11 h-11 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center mb-4 group-hover:bg-accent/15 transition-colors duration-300">
-        <Icon size={20} className="text-accent" />
+      <div className="w-12 h-12 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center mb-5 group-hover:bg-accent/15 transition-colors duration-300">
+        <Icon size={22} className="text-accent" />
       </div>
-      <h3 className="text-text-primary font-semibold text-lg mb-2">{area.title}</h3>
-      <p className="text-text-secondary text-sm leading-relaxed">{area.description}</p>
+      <h3 className="text-text-primary font-semibold text-lg mb-3">{area.title}</h3>
+      <p className="text-text-secondary text-sm sm:text-base leading-relaxed">{area.description}</p>
       <div className="absolute bottom-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
     </div>
   )

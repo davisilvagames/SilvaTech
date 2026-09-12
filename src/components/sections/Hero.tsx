@@ -21,9 +21,9 @@ export default function Hero() {
     >
       <AnimatedGrid />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center pt-24 pb-20">
+      <div className="relative z-10 max-w-[800px] mx-auto px-6 text-center py-20">
         <div
-          className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-border-light bg-bg-card/50 backdrop-blur-sm mb-8 transition-all duration-500 ${
+          className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-border-light bg-bg-card/50 backdrop-blur-sm mb-10 transition-all duration-500 ${
             reduced ? 'opacity-100' : 'opacity-0 animate-[fadeIn_0.6s_ease-out_0.2s_forwards]'
           }`}
         >
@@ -34,7 +34,7 @@ export default function Hero() {
         </div>
 
         <h1
-          className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.08] tracking-tight mb-6 transition-all duration-700 ${
+          className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.08] tracking-tight mb-8 transition-all duration-700 ${
             reduced ? 'opacity-100' : 'opacity-0 animate-[fadeIn_0.8s_ease-out_0.4s_forwards]'
           }`}
         >
@@ -46,7 +46,7 @@ export default function Hero() {
         </h1>
 
         <p
-          className={`text-text-secondary text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed transition-all duration-700 ${
+          className={`text-text-secondary text-base sm:text-lg max-w-[700px] mx-auto mb-12 leading-relaxed transition-all duration-700 ${
             reduced ? 'opacity-100' : 'opacity-0 animate-[fadeIn_0.8s_ease-out_0.6s_forwards]'
           }`}
         >
@@ -54,14 +54,14 @@ export default function Hero() {
         </p>
 
         <div
-          className={`flex flex-col sm:flex-row items-center justify-center gap-4 transition-all duration-700 ${
+          className={`flex flex-col sm:flex-row items-center justify-center gap-5 transition-all duration-700 ${
             reduced ? 'opacity-100' : 'opacity-0 animate-[fadeIn_0.8s_ease-out_0.8s_forwards]'
           }`}
         >
           <a
             href="#empresa"
             onClick={(e) => { e.preventDefault(); scrollTo('#empresa') }}
-            className="group inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent text-bg-primary font-semibold text-sm hover:bg-accent-hover transition-all duration-200 hover:shadow-[0_0_20px_var(--color-accent-glow)]"
+            className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-lg bg-accent text-bg-primary font-semibold text-sm hover:bg-accent-hover transition-all duration-200 hover:shadow-[0_0_20px_var(--color-accent-glow)]"
           >
             Conheça a empresa
             <ArrowRight size={16} className="transition-transform duration-200 group-hover:translate-x-0.5" />
@@ -69,7 +69,7 @@ export default function Hero() {
           <a
             href="#retro-rumble"
             onClick={(e) => { e.preventDefault(); scrollTo('#retro-rumble') }}
-            className="group inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-retro/30 bg-retro/5 text-retro font-semibold text-sm hover:bg-retro/15 hover:border-retro/50 transition-all duration-200"
+            className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-lg border border-retro/30 bg-retro/5 text-retro font-semibold text-sm hover:bg-retro/15 hover:border-retro/50 transition-all duration-200"
           >
             Conheça o Retro Rumble
             <ArrowRight size={16} className="transition-transform duration-200 group-hover:translate-x-0.5" />
